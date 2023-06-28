@@ -146,59 +146,65 @@ public class Curso {
   }
 
   public AmplaConcorrencia getListaAC() {
-	return listaAC;
-}
-
-public void setListaAC(AmplaConcorrencia listaAC) {
-	this.listaAC = listaAC;
+	  if(primeiroColocado("AC") != null) {
+		  listaAC.Verificacao();
+		  return listaAC;
+	  }
+	  return null;
 }
 
 public EscolaPublica getListaEP() {
-	return listaEP;
+	 if(primeiroColocado("EP") != null) {
+		 listaEP.Verificacao();
+		 return listaEP;
+	 }
+	 return null;
 }
 
-public void setListaEP(EscolaPublica listaEP) {
-	this.listaEP = listaEP;
-}
 
 public PPIEP getListaPPIEP() {
-	return listaPPIEP;
-}
+	if(primeiroColocado("PPIEP") != null) {
+		listaPPIEP.Verificacao();
+		return listaPPIEP;
+	 }
+	 return null;
 
-public void setListaPPIEP(PPIEP listaPPIEP) {
-	this.listaPPIEP = listaPPIEP;
 }
 
 public PPIRF getListaPPIRF() {
-	return listaPPIRF;
-}
+	if(primeiroColocado("PPIRF") != null) {
+		listaPPIRF.Verificacao();
+		return listaPPIRF;
+	 }
+	 return null;
 
-public void setListaPPIRF(PPIRF listaPPIRF) {
-	this.listaPPIRF = listaPPIRF;
 }
 
 public PcDEP getListaPcDEP() {
-	return listaPcDEP;
-}
+	if(primeiroColocado("PcDEP") != null) {
+		listaPcDEP.Verificacao();
+		return listaPcDEP;
+	 }
+	 return null;
 
-public void setListaPcDEP(PcDEP listaPcDEP) {
-	this.listaPcDEP = listaPcDEP;
 }
 
 public PcDRF getListaPcDRF() {
-	return listaPcDRF;
-}
+	if(primeiroColocado("PcDRF") != null) {
+		listaPcDRF.Verificacao();
+		return listaPcDRF;
+	 }
+	 return null;
 
-public void setListaPcDRF(PcDRF listaPcDRF) {
-	this.listaPcDRF = listaPcDRF;
 }
 
 public RendaFamiliar getListaRF() {
-	return listaRF;
-}
+	if(primeiroColocado("RF") != null) {
+		listaRF.Verificacao();
+		return listaRF;
+	 }
+	 return null;
 
-public void setListaRF(RendaFamiliar listaRF) {
-	this.listaRF = listaRF;
 }
 
   public void imprimirLista(String modalidade){
@@ -237,6 +243,7 @@ public void setNome(String nomeDoCurso) {
 
 public int getVagasAC() {
 	return vagasAC;
+	
 }
 
 public void setVagasAC(int vagasAC) {

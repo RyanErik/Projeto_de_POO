@@ -14,7 +14,7 @@ public class Instituicao {
 	public Instituicao(String nome, String estado) {
 	    this.cursos = new Vector<>();
 	    this.setNome(nome);
-	    this.estado = estado;
+	    this.setEstado(estado);
 	  }
 	
 	public Curso procurar(String nome){
@@ -70,30 +70,29 @@ public class Instituicao {
 		 arquivo.criaArquivo(getNome());		 
 	 }
 	 
-	 public void escrevendoArquivo(String nome) {
-		 Vector<Estudante> estudantes = new Vector<Estudante>();
+	 public void escrevendoArquivo() {
 		 for(Curso curso: cursos) {
 			 arquivo.cursos(curso.getNome());
 			 for(int j = 0; j < 7; j++) {
-				 if( j == 0) {
+				 if( j == 0 && curso.getListaAC() != null) {
 					 arquivo.escreveArquivo(curso.getListaAC());
 				 }
-				 else if(j == 1) {
+				 else if(j == 1 && curso.getListaEP() != null) {
 					 arquivo.escreveArquivo(curso.getListaEP());
 				 }
-				 else if(j == 2) {
+				 else if(j == 2 && curso.getListaRF() != null) {
 					 arquivo.escreveArquivo(curso.getListaRF());
 				 }
-				 else if(j == 3) {
+				 else if(j == 3 && curso.getListaPPIEP() != null) {
 					 arquivo.escreveArquivo(curso.getListaPPIEP());
 				 }
-				 else if(j == 4) {
+				 else if(j == 4 && curso.getListaPPIRF() != null) {
 					 arquivo.escreveArquivo(curso.getListaPPIRF());
 				 }
-				 else if(j == 5) {
+				 else if(j == 5 && curso.getListaPcDEP() != null) {
 					 arquivo.escreveArquivo(curso.getListaPcDEP());
 				 }
-				 else if(j == 6) {
+				 else if(j == 6 && curso.getListaPcDRF() != null) {
 					 arquivo.escreveArquivo(curso.getListaPcDRF());
 				 }
 			 }
@@ -107,5 +106,21 @@ public class Instituicao {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public int getVagas() {
+		return vagas;
+	}
+
+	public void setVagas(int vagas) {
+		this.vagas = vagas;
 	}
 }

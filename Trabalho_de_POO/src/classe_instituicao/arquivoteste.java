@@ -16,12 +16,11 @@ public class arquivoteste {
 	File file;
 	public arquivoteste() {
 		
-		
 	}
 	
 	public void criaArquivo(String nome) {
 		try {
-			file = new File(nome);
+			file = new File(nome + ".txt");
 			file.createNewFile();
 		}catch(IOException io) {
 			System.out.println("erro");
@@ -32,7 +31,10 @@ public class arquivoteste {
 		try {
 			FileWriter escrever = new FileWriter(file, true);
 			PrintWriter escreverb = new PrintWriter(escrever);
+			escreverb.println();
 			escreverb.println(nome);
+			escrever.close();
+			escreverb.close();
 		}catch(IOException io) {
 			System.out.println("erro");
 		}

@@ -1,6 +1,0 @@
-Escola Publica
-ryan:800.0----Aprovado(a)
-Maria: 500.0----Estudante não estudou em escola publica
-PcD
-pedro:300.0----Aprovado(a)
-joao: 200.0----Vagas Insuficientes
