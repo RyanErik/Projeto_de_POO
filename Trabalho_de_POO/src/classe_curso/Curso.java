@@ -23,13 +23,13 @@ public class Curso {
   private int vagasRF;
 
   public Curso(String nomeDoCurso, int vagasAC, int vagasEP, int vagasPPIEP, int vagasPPIRF, int vagasPcDEP, int vagasPcDRF, int vagasRF) {
-    this.vagasAC = vagasAC;
-    this.vagasRF = vagasEP;
-    this.vagasAC = vagasPPIEP;
-    this.vagasRF = vagasPPIRF;
-    this.vagasAC = vagasPcDEP;
-    this.vagasRF = vagasPcDRF;
-    this.vagasAC = vagasRF;
+    this.setVagasAC(vagasAC);
+    this.setVagasRF(vagasEP);
+    this.setVagasAC(vagasPPIEP);
+    this.setVagasRF(vagasPPIRF);
+    this.setVagasAC(vagasPcDEP);
+    this.setVagasRF(vagasPcDRF);
+    this.setVagasAC(vagasRF);
     listaAC = new AmplaConcorrencia(vagasAC);
     listaEP = new EscolaPublica(vagasEP);
     listaPPIEP = new PPIEP(vagasPPIEP);
@@ -37,7 +37,7 @@ public class Curso {
     listaPcDEP = new PcDEP(vagasPcDEP);
     listaPcDRF = new PcDRF(vagasPcDRF);
     listaRF = new RendaFamiliar(vagasRF);
-    this.nomeDoCurso = nomeDoCurso;
+    this.setNome(nomeDoCurso);
   }
 
   public void adicionar(Estudante est, String modalidade) {
@@ -145,32 +145,151 @@ public class Curso {
     return null;
   }
 
-  // Imprimir os objetos do vetor
+  public AmplaConcorrencia getListaAC() {
+	return listaAC;
+}
+
+public void setListaAC(AmplaConcorrencia listaAC) {
+	this.listaAC = listaAC;
+}
+
+public EscolaPublica getListaEP() {
+	return listaEP;
+}
+
+public void setListaEP(EscolaPublica listaEP) {
+	this.listaEP = listaEP;
+}
+
+public PPIEP getListaPPIEP() {
+	return listaPPIEP;
+}
+
+public void setListaPPIEP(PPIEP listaPPIEP) {
+	this.listaPPIEP = listaPPIEP;
+}
+
+public PPIRF getListaPPIRF() {
+	return listaPPIRF;
+}
+
+public void setListaPPIRF(PPIRF listaPPIRF) {
+	this.listaPPIRF = listaPPIRF;
+}
+
+public PcDEP getListaPcDEP() {
+	return listaPcDEP;
+}
+
+public void setListaPcDEP(PcDEP listaPcDEP) {
+	this.listaPcDEP = listaPcDEP;
+}
+
+public PcDRF getListaPcDRF() {
+	return listaPcDRF;
+}
+
+public void setListaPcDRF(PcDRF listaPcDRF) {
+	this.listaPcDRF = listaPcDRF;
+}
+
+public RendaFamiliar getListaRF() {
+	return listaRF;
+}
+
+public void setListaRF(RendaFamiliar listaRF) {
+	this.listaRF = listaRF;
+}
+
   public void imprimirLista(String modalidade){
 
-    if(modalidade == "AC") {
-      listaAC.imprimirLista();
-    }
-    else if(modalidade == "EP") {
-      listaEP.imprimirLista();
-    }
-    else if(modalidade == "PPIEP") {
-      listaPPIEP.imprimirLista();
-    }
-    else if(modalidade == "PPIRF") {
-      listaPPIRF.imprimirLista();
-    }
-    else if(modalidade == "PcDEP") {
-      listaPcDEP.imprimirLista();
-    }
-    else if(modalidade == "PcDRF") {
-      listaPcDRF.imprimirLista();
-    }
-    else if(modalidade == "RF") {
-      listaRF.imprimirLista();
-    }    
-       
-  } 
+	    if(modalidade == "AC") {
+	      listaAC.imprimirLista();
+	    }
+	    else if(modalidade == "EP") {
+	      listaEP.imprimirLista();
+	    }
+	    else if(modalidade == "PPIEP") {
+	      listaPPIEP.imprimirLista();
+	    }
+	    else if(modalidade == "PPIRF") {
+	      listaPPIRF.imprimirLista();
+	    }
+	    else if(modalidade == "PcDEP") {
+	      listaPcDEP.imprimirLista();
+	    }
+	    else if(modalidade == "PcDRF") {
+	      listaPcDRF.imprimirLista();
+	    }
+	    else if(modalidade == "RF") {
+	      listaRF.imprimirLista();
+	    }    
+	       
+	  }
+
+public String getNome() {
+	return nomeDoCurso;
+}
+
+public void setNome(String nomeDoCurso) {
+	this.nomeDoCurso = nomeDoCurso;
+}
+
+public int getVagasAC() {
+	return vagasAC;
+}
+
+public void setVagasAC(int vagasAC) {
+	this.vagasAC = vagasAC;
+}
+
+public int getVagasEP() {
+	return vagasEP;
+}
+
+public void setVagasEP(int vagasEP) {
+	this.vagasEP = vagasEP;
+}
+
+public int getVagasPPIEP() {
+	return vagasPPIEP;
+}
+
+public void setVagasPPIEP(int vagasPPIEP) {
+	this.vagasPPIEP = vagasPPIEP;
+}
+
+public int getVagasPPIRF() {
+	return vagasPPIRF;
+}
+
+public void setVagasPPIRF(int vagasPPIRF) {
+	this.vagasPPIRF = vagasPPIRF;
+}
+
+public int getVagasPcDEP() {
+	return vagasPcDEP;
+}
+
+public void setVagasPcDEP(int vagasPcDEP) {
+	this.vagasPcDEP = vagasPcDEP;
+}
+
+public int getVagasPcDRF() {
+	return vagasPcDRF;
+}
+
+public void setVagasPcDRF(int vagasPcDRF) {
+	this.vagasPcDRF = vagasPcDRF;
+}
+
+public int getVagasRF() {
+	return vagasRF;
+}
+
+public void setVagasRF(int vagasRF) {
+	this.vagasRF = vagasRF;
+} 
   
   
 }

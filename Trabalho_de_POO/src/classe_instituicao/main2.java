@@ -18,11 +18,6 @@ public class main2 {
 		es.adicionaEstudante(eS3);
 		es.Verificacao();
 		
-		arquivoteste e = new arquivoteste();
-		e.criaArquivo();
-		e.escreveArquivo(es);
-		e.escreveArquivo(KN);
-		
 	}
 
 }

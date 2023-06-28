@@ -32,7 +32,6 @@ public class AmplaConcorrencia{
 	public void Final(int i) {
 		Estudante e = estudantes.remove(i);
 		estudantes.add(e);
-		
 	}
 	
 	public void Colocacao(int i) throws VIException, EPException, RFException, PPIException, PcDException {		

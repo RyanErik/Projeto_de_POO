@@ -14,20 +14,30 @@ import classe_modalidade.*;
 
 public class arquivoteste {
 	File file;
-	FileWriter ler;
 	public arquivoteste() {
 		
 		
 	}
 	
-	public void criaArquivo() {
+	public void criaArquivo(String nome) {
 		try {
-			file = new File("Testes.txt");
+			file = new File(nome);
 			file.createNewFile();
 		}catch(IOException io) {
 			System.out.println("erro");
 		}
 	}
+	
+	public void cursos(String nome) {
+		try {
+			FileWriter escrever = new FileWriter(file, true);
+			PrintWriter escreverb = new PrintWriter(escrever);
+			escreverb.println(nome);
+		}catch(IOException io) {
+			System.out.println("erro");
+		}
+	}
+	
 	public void escreveArquivo(AmplaConcorrencia es) {
 		
 		try {
