@@ -3,9 +3,9 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class PPIEP extends EscolaPublica{
-	private String name = "PPI";
 	public PPIEP(int vagas) {
 		super(vagas);
+		name = "PPI";
 	}
 
 

@@ -3,10 +3,10 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class EscolaPublica extends AmplaConcorrencia {
-	private String name = "Escola Publica";
 	
 	public EscolaPublica(int vagas) {
 		super(vagas);
+		name = "Escola Publica";
 	}
 	
 	public  Boolean verificaEscolaPublica(Estudante e){

@@ -65,6 +65,12 @@ public class Instituicao {
 			return null;
 		 }
 	 
+	 public void imprimirLista() {
+			for (Curso curso : cursos) {
+		        System.out.println(curso.getNome());
+		    }
+		}
+	 
 	 public void criandoArquivo() {
 		 arquivo = new arquivoteste();
 		 arquivo.criaArquivo(getNome());		 

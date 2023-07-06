@@ -3,9 +3,9 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class RendaFamiliar extends EscolaPublica{
-	private String name = "Baixa Renda";
 	public RendaFamiliar(int vagas) {
 		super(vagas);
+		name = "Baixa Renda";
 	}
 	
 	public Boolean verificaRenda(Estudante e){
