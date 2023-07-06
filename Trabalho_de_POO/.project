@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/classe_estudante/Estudante.java</name>
-			<type>1</type>
-			<location>C:/Users/Taciano/Downloads/Estudante.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>

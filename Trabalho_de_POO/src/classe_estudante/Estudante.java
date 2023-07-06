@@ -1,25 +1,24 @@
 package classe_estudante;
 
-import classe_modalidade.*;
 
 public class Estudante {
-	
-	private String nome; //nome publico
-	private float nota; //nota do Enem
-	
-	public static void main(String[] args ) {
-	}
-	
-	public Estudante(String nome, float nota) {
+	private String nome; 
+	private float nota; 
+	private String exc = null;
+	private String Modalidade;
+	private double Renda;
+	private String Etnia;
+	private boolean Deficiencia;
+	private String EscolaPublica;
+	public Estudante(String nome, float nota, String modalidade, double renda, String etnia, boolean deficiencia,
+			String escolaPublica) {
 		this.nome = nome;
 		this.nota = nota;
-	}
-	
-	public int compararEstudante (Estudante outroEstudante) {
-		return Float.compare(outroEstudante.getNota(), this.nota);
-		//0: if f1 is numerically equal to f2.
-		//Negative value: if f1 is numerically less than f2.
-		//Positive value: if f1 is numerically greater than f2.
+		this.Modalidade = modalidade;
+		this.Renda = renda;
+		this.Etnia = etnia;
+		this.Deficiencia = deficiencia;
+		this.EscolaPublica = escolaPublica;
 	}
 	
 	public String getNome() {
@@ -28,6 +27,54 @@ public class Estudante {
 	
 	public float getNota() {
 		return this.nota;
+	}
+
+	public String getExc() {
+		return exc;
+	}
+
+	public void setExc(String exc) {
+		this.exc = exc;
+	}
+
+	public double getRenda() {
+		return Renda;
+	}
+
+	public void setRenda(double renda) {
+		Renda = renda;
+	}
+
+	public String getEtnia() {
+		return Etnia;
+	}
+
+	public void setEtnia(String etnia) {
+		Etnia = etnia;
+	}
+
+	public boolean isDeficiencia() {
+		return Deficiencia;
+	}
+
+	public void setDeficiencia(boolean deficiencia) {
+		Deficiencia = deficiencia;
+	}
+
+	public String isEscolaPublica() {
+		return EscolaPublica;
+	}
+
+	public void setEscolaPublica(String escolaPublica) {
+		EscolaPublica = escolaPublica;
+	}
+
+	public String getModalidade() {
+		return Modalidade;
+	}
+
+	public void setModalidade(String modalidade) {
+		Modalidade = modalidade;
 	}
 
 }
