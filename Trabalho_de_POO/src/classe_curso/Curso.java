@@ -94,26 +94,26 @@ public class Curso {
 
   //remove estudante
   public void remover(String est, String modalidade) {
-	System.out.println("modalidade e:"+modalidade);
+	
     if(modalidade.equals("AC")){
     	listaAC.remover(est);
     }
-    else if(modalidade == "EP") {
+    else if(modalidade.equals("EP")) {
       listaEP.remover(est);
     }
-    else if(modalidade == "PPIEP") {
+    else if(modalidade.equals("PPIEP")) {
       listaPPIEP.remover(est);
     }
-    else if(modalidade == "PPIRF") {
+    else if(modalidade.equals("PPIRF")) {
       listaPPIRF.remover(est);
     }
-    else if(modalidade == "PcDEP") {
+    else if(modalidade.equals("PcDEP")) {
       listaPcDEP.remover(est);
     }
-    else if(modalidade == "PcDRF") {
+    else if(modalidade.equals("PcDRF")) {
       listaPcDRF.remover(est);
     }
-    else if(modalidade == "RF") {
+    else if(modalidade.equals("RF")) {
       listaRF.remover(est);
     }   
          
@@ -215,22 +215,22 @@ public RendaFamiliar getListaRF() {
 	    	
 	      listaAC.imprimirLista();
 	    }
-	    else if(modalidade == "EP") {
+	    else if(modalidade.equals("EP")) {
 	      listaEP.imprimirLista();
 	    }
-	    else if(modalidade == "PPIEP") {
+	    else if(modalidade.equals("PPIEP")) {
 	      listaPPIEP.imprimirLista();
 	    }
-	    else if(modalidade == "PPIRF") {
+	    else if(modalidade.equals("PPIRF")) {
 	      listaPPIRF.imprimirLista();
 	    }
-	    else if(modalidade == "PcDEP") {
+	    else if(modalidade.equals("PcDEP")) {
 	      listaPcDEP.imprimirLista();
 	    }
-	    else if(modalidade == "PcDRF") {
+	    else if(modalidade.equals("PcDRF")) {
 	      listaPcDRF.imprimirLista();
 	    }
-	    else if(modalidade == "RF") {
+	    else if(modalidade.equals("RF")) {
 	      listaRF.imprimirLista();
 	    }    
 	       

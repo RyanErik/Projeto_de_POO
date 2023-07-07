@@ -220,9 +220,9 @@ public class Sisu {
             switch (opcao) {
 				case 1: {
 					System.out.println("Digite o nome da Instituição");
-					String instituicao = scanner.next();
+					String instituicao = scanner.nextLine();
 					System.out.println("Digite o nome do Estado");
-					String estado = scanner.next();
+					String estado = scanner.nextLine();
 					
 					adicionarInstituicao(new Instituicao(instituicao, estado));	
 					break;
@@ -233,43 +233,43 @@ public class Sisu {
 				}
 				case 3: {
 					System.out.println("Digite o nome da Instituicao a ser removida:");
-					String instituicao = scanner.next();
+					String instituicao = scanner.nextLine();
 					removerInstituicao(instituicao);
 					break;
 				}
 				case 4: {
 					System.out.println("Em qual instituicao vc quer adicionar o curso");
-					String name = scanner.next();
+					String name = scanner.nextLine();
 					
 					adicionarCurso(name);
 					break;
 				}case 5: {
 					System.out.println("Digite o curso escolhido:");
-					String curso = scanner.next();
+					String curso = scanner.nextLine();
 					
 					System.out.println("Digite o nome do aluno:");
-					String nomeAluno = scanner.next();
+					String nomeAluno = scanner.nextLine();
 					
 					System.out.println("Digite a nota:");
-					String nota = scanner.next();
+					String nota = scanner.nextLine();
 					
 					float notaParseFloat = Float.parseFloat(nota);
 					
 					//modalidade
 					System.out.println("Digite sua modalidade:");
-					String modalidade = scanner.next();
+					String modalidade = scanner.nextLine();
 					//renda
 					System.out.println("Digite a renda:");
 					double renda = scanner.nextInt();
 					//etnia
 					System.out.println("Digite sua etnia:");
-					String etnia = scanner.next();
+					String etnia = scanner.nextLine();
 					//deficiencia
 					System.out.println("Possui deficiencia:");
 					boolean deficiencia = scanner.nextBoolean();
 					//escola publica
 					System.out.println("Escola Publica?:");
-					String escolaPublica = scanner.next();
+					String escolaPublica = scanner.nextLine();
 					
 					Estudante estudante = new Estudante(nomeAluno, notaParseFloat, modalidade, renda, etnia, deficiencia,
 							 escolaPublica);
@@ -278,14 +278,14 @@ public class Sisu {
 					break;
 				}case 6: {
 					System.out.println("Digite o curso escolhido:");
-					String curso = scanner.next();
+					String curso = scanner.nextLine();
 					
 					System.out.println("Digite o nome do Aluno:");
-					String nomeAluno = scanner.next();
+					String nomeAluno = scanner.nextLine();
 					
 					//procurar o aluno pelo nome
 					System.out.println("Qual modalidade o aluno pertence");
-					String modalidade = scanner.next();
+					String modalidade = scanner.nextLine();
 					
 					//metodo para remover estudante
 					removerEstudante(curso, nomeAluno, modalidade);
@@ -294,35 +294,35 @@ public class Sisu {
 				}case 7: {
 					//Listar Cursos
 					System.out.println("Em qual instituicao vc quer Listar os cursos");
-					String name = scanner.next();
+					String name = scanner.nextLine();
 					
 					listarCursos(name);
 					break;
 				}case 8: {
 					//Listar alunos por curso e modalidade
 					System.out.println("Em qual instituicao vc quer Listar os alunos");
-					String instituicao = scanner.next();
+					String instituicao = scanner.nextLine();
 					
 					System.out.println("Listar qual curso");
-					String curso = scanner.next();
+					String curso = scanner.nextLine();
 					
 					System.out.println("Listar qual modalidade");
-					String modalidade = scanner.next();
+					String modalidade = scanner.nextLine();
 					
 					listarAlunos(instituicao, curso, modalidade);
 					break;
 				}case 9: {
 					System.out.println("Em qual instituicao vc quer excluir o curso");
-					String curso = scanner.next();
+					String curso = scanner.nextLine();
 					
 					System.out.println("Em qual curso vc deseja excluir");
-					String instituicao = scanner.next();
+					String instituicao = scanner.nextLine();
 					
 					removerCurso(curso, instituicao);
 					break;
 				}case 10: {
 					System.out.println("Em qual instituicao vc quer Listar os cursos");
-					String name = scanner.next();
+					String name = scanner.nextLine();
 					
 					salvandoResultados(name);
 					
@@ -332,7 +332,7 @@ public class Sisu {
 					break;
 				}case 12: {
 					System.out.println("Em qual instituicao vc quer Listar os cursos");
-					String name = scanner.next();
+					String name = scanner.nextLine();
 					leituraResultados(name);
 					break;
 				}
