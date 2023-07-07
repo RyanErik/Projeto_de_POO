@@ -37,46 +37,53 @@ public class Instituicao {
 	    }
 	}
 	
-	public void remover(Curso curso){
-	    if(procurar(curso.getNome())!=null){
-	      cursos.remove(curso);
+	public void remover(String curso){
+	    if(procurar(curso)!=null){
+	      cursos.remove(procurar(curso));
 	    }
 	}
 	
-	 public void adicionarAluno(String nome, Estudante aluno){
+	public void adicionarAluno(String nome, Estudante aluno){
 		Curso curso = procurar(nome);
 		if(curso!= null){
 			curso.adicionar(aluno, aluno.getModalidade());
 		}
 	 }
 	 
-	 public void removerAluno(String nome, Estudante aluno){
+	public void removerAluno(String nome, String aluno, String modalidade){
 		Curso curso = procurar(nome);
 		if(curso!= null){
-			curso.remover(aluno, aluno.getModalidade());
-			}
+			curso.remover(aluno, modalidade);
 		}
+	}
 	 
-	 public Estudante primeiroAluno(String nome, String Modalidade){
+	public void listarAlunos(String nome, String modalidade){
+		Curso curso = procurar(nome);
+		if(curso!= null){
+			curso.imprimirLista(modalidade);
+		}
+	}
+	 
+	public Estudante primeiroAluno(String nome, String Modalidade){
 			Curso curso = procurar(nome);
 			if(curso!= null){
 			   return curso.primeiroColocado(Modalidade);
 			}
 			return null;
-		 }
+	}
 	 
-	 public void imprimirLista() {
+	public void imprimirLista() {
 			for (Curso curso : cursos) {
 		        System.out.println(curso.getNome());
 		    }
-		}
+	}
 	 
-	 public void criandoArquivo() {
+	public void criandoArquivo() {
 		 arquivo = new arquivoteste();
 		 arquivo.criaArquivo(getNome());		 
 	 }
 	 
-	 public void escrevendoArquivo() {
+	public void escrevendoArquivo() {
 		 for(Curso curso: cursos) {
 			 arquivo.cursos(curso.getNome());
 			 for(int j = 0; j < 7; j++) {

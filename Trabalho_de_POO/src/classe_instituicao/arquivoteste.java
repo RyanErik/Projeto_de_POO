@@ -18,13 +18,29 @@ public class arquivoteste {
 		
 	}
 	
-	public void criaArquivo(String nome) {
+	/*public void criaArquivo(String nome) {
 		try {
+			System.out.println("passei aqui");
 			file = new File(nome + ".txt");
 			file.createNewFile();
 		}catch(IOException io) {
 			System.out.println("erro");
 		}
+	}*/
+	
+	public void criaArquivo(String nome) {
+	    try {
+	        file = new File(nome + ".txt");
+	        if (file.createNewFile()) {
+	            System.out.println("Arquivo criado com sucesso.");
+	            System.out.println("Caminho absoluto do arquivo: " + file.getAbsolutePath());
+	        } else {
+	            System.out.println("O arquivo já existe.");
+	        }
+	    } catch (IOException e) {
+	        System.out.println("Erro ao criar o arquivo:");
+	        e.printStackTrace();
+	    }
 	}
 	
 	public void cursos(String nome) {

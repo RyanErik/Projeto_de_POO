@@ -58,9 +58,13 @@ public abstract class Modalidade {
 		
 		
 		public void adicionaEstudante(Estudante e) {
-			 if(existe(e.getNome())) 
+			 
+			if(existe(e.getNome())) { 
+				 	
 			        return;
+			}
 			 estudantes.add(e);
+			 
 			 OrganizaEstudante();
 		}
 		
@@ -80,10 +84,12 @@ public abstract class Modalidade {
 			}
 		}
 		
-		public void remover(Estudante est) {
-		      if(procurar(est.getNome()) == null || estudantes.isEmpty()) 
+		public void remover(String aluno) {
+			if(!existe(aluno)) {
 		        return;
-		      estudantes.remove(est);
+			}
+		      estudantes.remove(procurar(aluno));
+		      System.out.println("deu certo");
 		  }
 
 		public Estudante primeiroColocado() {
@@ -98,9 +104,9 @@ public abstract class Modalidade {
 		  }
 		  
 		
-		private Estudante procurar(String nomeEstudante) {
+		public Estudante procurar(String nomeEstudante) {
 		    for (int i = 0; i < estudantes.size(); i++) {
-		      if (estudantes.get(i).getNome() == nomeEstudante) {
+		      if (estudantes.get(i).getNome().equals(nomeEstudante)) {
 		        return estudantes.get(i);
 		      }
 		    }

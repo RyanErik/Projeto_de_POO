@@ -41,49 +41,50 @@ public class Curso {
   }
 
   public void adicionar(Estudante est, String modalidade) {
-    if(modalidade == "AC")
+	 
+    if(modalidade.equals("AC"))
       listaAC.adicionaEstudante(est);
-    else if(modalidade == "EP") {
+    else if(modalidade.equals("EP")) {
       listaEP.adicionaEstudante(est);
     }
-    else if(modalidade == "PPIEP") {
+    else if(modalidade.equals("PPIEP")) {
       listaPPIEP.adicionaEstudante(est);
     }
-    else if(modalidade == "PPIRF") {
+    else if(modalidade.equals("PPIRF")) {
       listaPPIRF.adicionaEstudante(est);
     }
-    else if(modalidade == "PcDEP") {
+    else if(modalidade.equals("PcDEP")) {
       listaPcDEP.adicionaEstudante(est);
     }
-    else if(modalidade == "PcDRF") {
+    else if(modalidade.equals("PcDRF")) {
       listaPcDRF.adicionaEstudante(est);
     }
-    else if(modalidade == "RF") {
+    else if(modalidade.equals("RF")) {
       listaRF.adicionaEstudante(est);
     }
   }
 
   //Retorna true caso o aluno esteja na lista, retorna null caso contrário
   public boolean existe(String nomeEstudante, String modalidade) {
-    if(modalidade == "AC"){
+    if(modalidade.equals("AC")){
       return listaAC.existe(nomeEstudante);
     }
-    else if(modalidade == "EP") {
+    else if(modalidade.equals("EP")) {
       return listaEP.existe(nomeEstudante);
     }
-    else if(modalidade == "PPIEP") {
+    else if(modalidade.equals("PPIEP")) {
       return listaPPIEP.existe(nomeEstudante);
     }
-    else if(modalidade == "PPIRF") {
+    else if(modalidade.equals("PPIRF")) {
       return listaPPIRF.existe(nomeEstudante);
     }
-    else if(modalidade == "PcDEP") {
+    else if(modalidade.equals("PcDEP")) {
       return listaPcDEP.existe(nomeEstudante);
     }
-    else if(modalidade == "PcDRF") {
+    else if(modalidade.equals("PcDRF")) {
       return listaPcDRF.existe(nomeEstudante);
     }
-    else if(modalidade == "RF") {
+    else if(modalidade.equals("RF")) {
       return listaRF.existe(nomeEstudante);
     }    
 
@@ -92,10 +93,10 @@ public class Curso {
   
 
   //remove estudante
-  public void remover(Estudante est, String modalidade) {
-
-    if(modalidade == "AC"){
-      listaAC.remover(est);
+  public void remover(String est, String modalidade) {
+	System.out.println("modalidade e:"+modalidade);
+    if(modalidade.equals("AC")){
+    	listaAC.remover(est);
     }
     else if(modalidade == "EP") {
       listaEP.remover(est);
@@ -209,8 +210,9 @@ public RendaFamiliar getListaRF() {
 }
 
   public void imprimirLista(String modalidade){
-
-	    if(modalidade == "AC") {
+	  System.out.println("sua modalidade é: "+modalidade);
+	    if(modalidade.equals("AC")) {
+	    	
 	      listaAC.imprimirLista();
 	    }
 	    else if(modalidade == "EP") {
