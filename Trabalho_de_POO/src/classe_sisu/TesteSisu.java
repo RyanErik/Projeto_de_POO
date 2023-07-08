@@ -8,7 +8,6 @@ public class TesteSisu {
 	public static void main(String[] args) {
 		Sisu sistema = new Sisu();
 		
-		sistema.iniciar();
 		
 	}
 

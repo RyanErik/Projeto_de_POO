@@ -24,14 +24,14 @@ public class Sisu {
 		estaAbertoInscricoes = true;
 	}
 
-	public Instituicao procurar(String instituicao) {
+	public Instituicao procurar(String instituicao, String estado) {
 		
 		if (listaInstituicoes.size() <= 0) {
 			return null;
 		}
 		
 		for(int i = 0; i < listaInstituicoes.size(); i++) {
-			if(listaInstituicoes.get(i).getNome().equals(instituicao)) {				
+			if(listaInstituicoes.get(i).getNome().equals(instituicao) && listaInstituicoes.get(i).getEstado().equals(estado)) {				
 				return listaInstituicoes.get(i);
 			}
 		}
@@ -42,73 +42,48 @@ public class Sisu {
 
 	public void adicionarInstituicao(Instituicao instituicao) {
 		if(estaAbertoInscricoes == true) {
-			if(procurar(instituicao.getNome()) == null) {				
+			if(procurar(instituicao.getNome(), instituicao.getEstado()) == null) {				
 				listaInstituicoes.add(instituicao);
-				System.out.println("Cadastrada com sucesso!");
-			}else {
-				System.out.println("A instituicao ja foi cadastrada");
 			}
-		}else {
-			System.out.println("O Sisu esta encerrado!");
 		}
 	}
 
-	public void removerInstituicao(String instituicao) {
+	public void removerInstituicao(String nome, String estado) {
 		if(estaAbertoInscricoes == true) {
-			if(procurar(instituicao) != null) {
-				listaInstituicoes.remove(instituicao);
-				System.out.println("removida com sucesso");
-			}else {
-				System.out.println("Não foi possivel remover o elemento no momento");
+			if(procurar(nome, estado) != null) {
+				listaInstituicoes.remove(procurar(nome, estado));
 			}
-		}else {
-			System.out.println("O Sisu esta encerrado!");
 		}
-		
 	}
 
-	public void listarInstituicoes() {
+	public Vector<Instituicao> listarInstituicoes() {
 		
 		if(estaAbertoInscricoes == true) {
 			//Caso a lista esteja vazia
 		    if (listaInstituicoes.isEmpty()) {
-		      System.out.println("lista vazia");
-		      return;
+		      return null;
 		    }
-		
 		    //Caso a lista não esteja vazia
-		    for (Instituicao instituicao : listaInstituicoes) {
-		        System.out.println(instituicao.getNome());
-		    }
-		}else {
-			System.out.println("O Sisu esta encerrado!");
+		    return listaInstituicoes;
 		}
-		
+		return null;		
 	}
 	
-	public void adicionarCurso(String instituicao) {
+	public void adicionarCurso(String instituicao, String estado, String nome, int vagas) {
 		if(estaAbertoInscricoes == true) {
-			
-			if(procurar(instituicao) != null) {
-				System.out.println("Digite o nome do curso: ");
-				String curso = scanner.next();
-				System.out.println("Digite a quantidade de vagas para esse curso:");
-				int quantidadeVaga = scanner.nextInt();
-				
-				procurar(instituicao).cadastrar(curso, quantidadeVaga);
-			}else {
-				System.out.println("Instituicao nao encontrada");
+			if(procurar(instituicao, estado) != null) {
+				procurar(instituicao, estado).cadastrar(nome, vagas);
 			}
 		}
 	}
 	
-	public void adicionarEstudante(String curso, Estudante estudante) {
+	public void adicionarEstudante(String curso, Estudante estudante, String estado) {
 		if(estaAbertoInscricoes == true) {
 			System.out.println("Digite a instituicao ao qual deseja cadastrar o estudante: ");
 			String instituicao = scanner.next();
 
-			if(procurar(instituicao) != null) {
-				procurar(instituicao).adicionarAluno(curso, estudante);
+			if(procurar(instituicao, estado) != null) {
+				procurar(instituicao, estado).adicionarAluno(curso, estudante);
 			}else {
 				System.out.println("Instituicao nao encontrada");
 			}
@@ -119,29 +94,29 @@ public class Sisu {
 		}
 	}
 	
-	public void listarCursos(String instituicao) {
-		if(procurar(instituicao) != null) {
-			procurar(instituicao).imprimirLista();
+	public void listarCursos(String instituicao, String estado) {
+		if(procurar(instituicao, estado) != null) {
+			procurar(instituicao, estado).imprimirLista();
 		}else {
 			System.out.println("Instituicao nao encontrada");
 		}
 	}
 	
-	public void listarAlunos(String instituicao, String curso, String modalidade) {
-		if(procurar(instituicao) != null) {
-			procurar(instituicao).listarAlunos(curso, modalidade);
+	public void listarAlunos(String instituicao, String curso, String modalidade, String estado) {
+		if(procurar(instituicao, estado) != null) {
+			procurar(instituicao, estado).listarAlunos(curso, modalidade);
 		}else {
 			System.out.println("Instituicao nao encontrada");
 		}
 	}
 	
-	public void removerEstudante(String curso, String estudante, String modalidade) {
+	public void removerEstudante(String curso, String estudante, String modalidade, String estado) {
 		if(estaAbertoInscricoes == true) {
 			System.out.println("Digite a instituicao ao qual deseja remover o estudante: ");
 			String instituicao = scanner.next();
 
-			if(procurar(instituicao) != null) {
-				procurar(instituicao).removerAluno(curso, estudante, modalidade);
+			if(procurar(instituicao, estado) != null) {
+				procurar(instituicao, estado).removerAluno(curso, estudante, modalidade);
 			}else {
 				System.out.println("Instituicao nao encontrada");
 			}
@@ -152,10 +127,10 @@ public class Sisu {
 		}
 	}
 	
-	public void removerCurso(String curso, String instituicao) {
+	public void removerCurso(String curso, String instituicao, String estado) {
 		if(estaAbertoInscricoes == true) {
-			if(procurar(instituicao) != null) {
-				procurar(instituicao).remover(curso);
+			if(procurar(instituicao, estado) != null) {
+				procurar(instituicao, estado).remover(curso);
 			}else {
 				System.out.println("Instituicao nao encontrada");
 			}
@@ -164,11 +139,11 @@ public class Sisu {
 		}
 	}
 	
-	public void salvandoResultados(String instituicao) {
+	public void salvandoResultados(String instituicao, String estado) {
 		if(estaAbertoInscricoes == true) {
-			if(procurar(instituicao) != null) {
-				procurar(instituicao).criandoArquivo();
-				procurar(instituicao).escrevendoArquivo();
+			if(procurar(instituicao, estado) != null) {
+				procurar(instituicao, estado).criandoArquivo();
+				procurar(instituicao, estado).escrevendoArquivo();
 			}else {
 				System.out.println("Instituicao nao encontrada");
 			}
@@ -177,11 +152,11 @@ public class Sisu {
 		}
 	}
 	
-	public void leituraResultados(String instituicao) {
+	public void leituraResultados(String instituicao, String estado) {
 		if(estaAbertoInscricoes == false) {
-			if(procurar(instituicao) != null) {
+			if(procurar(instituicao, estado) != null) {
 				
-				File arquivo = new File(procurar(instituicao).getNome() +".txt"); // Especifique o caminho e o nome do arquivo
+				File arquivo = new File(procurar(instituicao, estado).getNome() +".txt"); // Especifique o caminho e o nome do arquivo
 
 		        try (FileReader fileReader = new FileReader(arquivo);
 		             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -212,11 +187,13 @@ public class Sisu {
 		this.estaAbertoInscricoes = estaAbertoInscricoes;
 	}
 	
-	public void iniciar () {
-		while(opcao != 0) {
-			exibirMenu();
-            opcao = scanner.nextInt();
-			
+	
+	public int tamanho() {
+		return listaInstituicoes.size();
+	}
+}
+/*	
+	public void iniciar (int opcao) {
             switch (opcao) {
 				case 1: {
 					System.out.println("Digite o nome da Instituição");
@@ -338,7 +315,6 @@ public class Sisu {
 				}
             }	
 		}
-	}
 	
 	public static void exibirMenu() {
         System.out.println("===== Menu =====");
@@ -358,3 +334,4 @@ public class Sisu {
         System.out.println("Digite o numero da opcao desejada:");
 	 }
 }
+*/

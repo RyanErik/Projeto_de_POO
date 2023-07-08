@@ -136,4 +136,9 @@ public class Instituicao {
 	public void setVagas(int vagas) {
 		this.vagas = vagas;
 	}
+	@Override
+	public String toString() {
+		return nome + "-" + estado;
+		
+	}
 }
