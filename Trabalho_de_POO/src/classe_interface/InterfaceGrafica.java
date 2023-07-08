@@ -24,7 +24,7 @@ public class InterfaceGrafica {
 					InterfaceGrafica window = new InterfaceGrafica();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+				 e.printStackTrace();
 				}
 			}
 		});
@@ -93,14 +93,14 @@ public class InterfaceGrafica {
 				}
 			}
 		});
-		btnAdicionarCurso.setBounds(60, 136, 167, 52);
+		btnAdicionarCurso.setBounds(60, 123, 167, 52);
 		frame.getContentPane().add(btnAdicionarCurso);
 		
 		JButton btnNewButton_1_2 = new JButton("Remover Curso");
 		btnNewButton_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(sisu.listarInstituicoes() != null) {
-					CadastraCursos window = new CadastraCursos(sisu);
+					RemoveCurso window = new RemoveCurso(sisu);
 					window.setVisible(true);
 				}
 				else {
@@ -109,11 +109,54 @@ public class InterfaceGrafica {
 				
 			}
 		});
-		btnNewButton_1_2.setBounds(248, 136, 167, 52);
+		btnNewButton_1_2.setBounds(248, 123, 167, 52);
 		frame.getContentPane().add(btnNewButton_1_2);
 		
 		JButton btnNewButton_1_1_1 = new JButton("Listar Curso");
-		btnNewButton_1_1_1.setBounds(436, 136, 167, 52);
+		btnNewButton_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(sisu.listarInstituicoes() != null) {
+					ListarCursos window = new ListarCursos(sisu);
+					window.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Nao tem nenhuma universidade!");
+				}
+			}
+		});
+		btnNewButton_1_1_1.setBounds(436, 123, 167, 52);
 		frame.getContentPane().add(btnNewButton_1_1_1);
+		
+		JButton btnAdicionarEstudante = new JButton("Adicionar Estudante");
+		btnAdicionarEstudante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAdicionarEstudante.setBounds(60, 186, 167, 52);
+		frame.getContentPane().add(btnAdicionarEstudante);
+		
+		JButton btnRemoverEstudante = new JButton("Remover Estudante");
+		btnRemoverEstudante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(sisu.listarInstituicoes() != null) {
+					RemoveEstudante window = new RemoveEstudante(sisu);
+					window.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Nao tem nenhuma universidade!");
+				}
+				
+			}
+		});
+		btnRemoverEstudante.setBounds(248, 186, 167, 52);
+		frame.getContentPane().add(btnRemoverEstudante);
+		
+		JButton btnListarEstudantes = new JButton("Listar Estudantes");
+		btnListarEstudantes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnListarEstudantes.setBounds(436, 186, 167, 52);
+		frame.getContentPane().add(btnListarEstudantes);
 	}
 }

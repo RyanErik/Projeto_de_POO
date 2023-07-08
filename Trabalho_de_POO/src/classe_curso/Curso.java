@@ -300,6 +300,10 @@ public int getVagasRF() {
 public void setVagasRF(int vagasRF) {
 	this.vagasRF = vagasRF;
 } 
+@Override
+public String toString() {
+	return getNome();
+}
   
   
 }

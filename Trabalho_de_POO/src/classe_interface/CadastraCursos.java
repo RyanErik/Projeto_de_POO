@@ -37,7 +37,7 @@ public class CadastraCursos extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Adicionando Cursos");
-		lblNewLabel.setBounds(164, 11, 113, 14);
+		lblNewLabel.setBounds(164, 11, 160, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome da Universidade:");

@@ -72,10 +72,8 @@ public class Instituicao {
 			return null;
 	}
 	 
-	public void imprimirLista() {
-			for (Curso curso : cursos) {
-		        System.out.println(curso.getNome());
-		    }
+	public Vector<Curso> imprimirLista() {
+			return cursos;
 	}
 	 
 	public void criandoArquivo() {

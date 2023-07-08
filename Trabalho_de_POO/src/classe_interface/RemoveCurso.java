@@ -33,7 +33,7 @@ public class RemoveCurso extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Removendo Cursos");
-		lblNewLabel.setBounds(168, 0, 93, 14);
+		lblNewLabel.setBounds(168, 0, 130, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome da Universidade:");
