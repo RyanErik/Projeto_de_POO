@@ -18,16 +18,6 @@ public class arquivoteste {
 		
 	}
 	
-	/*public void criaArquivo(String nome) {
-		try {
-			System.out.println("passei aqui");
-			file = new File(nome + ".txt");
-			file.createNewFile();
-		}catch(IOException io) {
-			System.out.println("erro");
-		}
-	}*/
-	
 	public void criaArquivo(String nome) {
 	    try {
 	        file = new File(nome + ".txt");

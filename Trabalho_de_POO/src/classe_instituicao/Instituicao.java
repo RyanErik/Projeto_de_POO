@@ -43,14 +43,6 @@ public class Instituicao {
 	    }
 	}
 	
-	 
-	public void listarAlunos(String nome, String modalidade){
-		Curso curso = procurar(nome);
-		if(curso!= null){
-			curso.imprimirLista(modalidade);
-		}
-	}
-	 
 	public Estudante primeiroAluno(String nome, String Modalidade){
 			Curso curso = procurar(nome);
 			if(curso!= null){

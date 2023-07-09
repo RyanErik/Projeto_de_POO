@@ -113,11 +113,6 @@ public abstract class Modalidade {
 		    return null;
 		  }
 		
-		public void imprimirLista() {
-			for (Estudante estudante : estudantes) {
-		        System.out.println(estudante.getNome() + ": " + estudante.getNota());
-		    }
-		}
 	
 	 public Vector<Estudante> retornaResultado(){
 		    return estudantes;

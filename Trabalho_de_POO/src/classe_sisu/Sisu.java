@@ -61,23 +61,6 @@ public class Sisu {
 	}
 	
 	
-	public void listarCursos(String instituicao, String estado) {
-		if(procurar(instituicao, estado) != null) {
-			procurar(instituicao, estado).imprimirLista();
-		}else {
-			System.out.println("Instituicao nao encontrada");
-		}
-	}
-	
-	public void listarAlunos(String instituicao, String curso, String modalidade, String estado) {
-		if(procurar(instituicao, estado) != null) {
-			procurar(instituicao, estado).listarAlunos(curso, modalidade);
-		}else {
-			System.out.println("Instituicao nao encontrada");
-		}
-	}
-	
-	
 	public void removerCurso(String curso, String instituicao, String estado) {
 			if(procurar(instituicao, estado) != null) {
 				procurar(instituicao, estado).remover(curso);

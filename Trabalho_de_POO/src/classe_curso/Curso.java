@@ -209,32 +209,7 @@ public RendaFamiliar getListaRF() {
 
 }
 
-  public void imprimirLista(String modalidade){
-	  System.out.println("sua modalidade é: "+ modalidade);
-	    if(modalidade.equals("AC")) {
-	    	
-	      listaAC.imprimirLista();
-	    }
-	    else if(modalidade.equals("EP")) {
-	      listaEP.imprimirLista();
-	    }
-	    else if(modalidade.equals("PPIEP")) {
-	      listaPPIEP.imprimirLista();
-	    }
-	    else if(modalidade.equals("PPIRF")) {
-	      listaPPIRF.imprimirLista();
-	    }
-	    else if(modalidade.equals("PcDEP")) {
-	      listaPcDEP.imprimirLista();
-	    }
-	    else if(modalidade.equals("PcDRF")) {
-	      listaPcDRF.imprimirLista();
-	    }
-	    else if(modalidade.equals("RF")) {
-	      listaRF.imprimirLista();
-	    }    
-	       
-	  }
+ 
 
 public String getNome() {
 	return nomeDoCurso;
