@@ -130,6 +130,14 @@ public class InterfaceGrafica {
 		JButton btnAdicionarEstudante = new JButton("Adicionar Estudante");
 		btnAdicionarEstudante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(sisu.listarInstituicoes() != null) {
+					AdicionaEstudante window = new AdicionaEstudante(sisu);
+					window.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Nao tem nenhuma universidade!");
+				}
+				
 			}
 		});
 		btnAdicionarEstudante.setBounds(60, 186, 167, 52);
@@ -154,9 +162,31 @@ public class InterfaceGrafica {
 		JButton btnListarEstudantes = new JButton("Listar Estudantes");
 		btnListarEstudantes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(sisu.listarInstituicoes() != null) {
+					ListarEstudante window = new ListarEstudante(sisu);
+					window.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Nao tem nenhuma universidade!");
+				}
 			}
 		});
 		btnListarEstudantes.setBounds(436, 186, 167, 52);
 		frame.getContentPane().add(btnListarEstudantes);
+		
+		JButton btnRetornarResultado = new JButton("Retornar Resultado");
+		btnRetornarResultado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(sisu.listarInstituicoes() != null) {
+					RetornaResultado window = new RetornaResultado(sisu);
+					window.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Nao tem nenhuma universidade!");
+				}
+			}
+		});
+		btnRetornarResultado.setBounds(248, 260, 167, 52);
+		frame.getContentPane().add(btnRetornarResultado);
 	}
 }

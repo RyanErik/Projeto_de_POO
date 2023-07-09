@@ -1,6 +1,5 @@
 package classe_interface;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +20,6 @@ public class RemoveCurso extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 	
 	public RemoveCurso(Sisu sisu) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,7 +42,7 @@ public class RemoveCurso extends JFrame {
 		lblNewLabel_1_1.setBounds(10, 86, 139, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Nome da Curso:");
+		JLabel lblNewLabel_1_2 = new JLabel("Nome do Curso:");
 		lblNewLabel_1_2.setBounds(10, 130, 139, 14);
 		contentPane.add(lblNewLabel_1_2);
 		

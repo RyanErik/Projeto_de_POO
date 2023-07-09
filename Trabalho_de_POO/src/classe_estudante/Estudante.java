@@ -5,16 +5,14 @@ public class Estudante {
 	private String nome; 
 	private float nota; 
 	private String exc = null;
-	private String Modalidade;
 	private double Renda;
 	private String Etnia;
 	private boolean Deficiencia;
 	private String EscolaPublica;
-	public Estudante(String nome, float nota, String modalidade, double renda, String etnia, boolean deficiencia,
+	public Estudante(String nome, float nota, double renda, String etnia, boolean deficiencia,
 			String escolaPublica) {
 		this.nome = nome;
 		this.nota = nota;
-		this.Modalidade = modalidade;
 		this.Renda = renda;
 		this.Etnia = etnia;
 		this.Deficiencia = deficiencia;
@@ -68,13 +66,10 @@ public class Estudante {
 	public void setEscolaPublica(String escolaPublica) {
 		EscolaPublica = escolaPublica;
 	}
-
-	public String getModalidade() {
-		return Modalidade;
-	}
-
-	public void setModalidade(String modalidade) {
-		Modalidade = modalidade;
+	
+	@Override
+	public String toString() {
+		return getNome() + "-" + getNota();
 	}
 
 }

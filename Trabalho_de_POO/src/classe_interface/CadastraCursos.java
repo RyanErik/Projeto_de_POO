@@ -1,7 +1,5 @@
 package classe_interface;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -48,7 +46,7 @@ public class CadastraCursos extends JFrame {
 		lblNewLabel_1_1.setBounds(10, 86, 139, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Nome da Curso:");
+		JLabel lblNewLabel_1_2 = new JLabel("Nome do Curso:");
 		lblNewLabel_1_2.setBounds(10, 130, 139, 14);
 		contentPane.add(lblNewLabel_1_2);
 		

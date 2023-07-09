@@ -210,7 +210,7 @@ public RendaFamiliar getListaRF() {
 }
 
   public void imprimirLista(String modalidade){
-	  System.out.println("sua modalidade é: "+modalidade);
+	  System.out.println("sua modalidade é: "+ modalidade);
 	    if(modalidade.equals("AC")) {
 	    	
 	      listaAC.imprimirLista();

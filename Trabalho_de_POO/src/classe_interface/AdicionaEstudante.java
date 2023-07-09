@@ -1,6 +1,5 @@
 package classe_interface;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,6 +28,8 @@ public class AdicionaEstudante extends JFrame {
 	private String Etnia;
 	private Boolean Deficiencia;
 	private String Ensino;
+	private double Renda;
+	private float Nota;
 	private JTextField textField_5;
 
 
@@ -50,15 +51,15 @@ public class AdicionaEstudante extends JFrame {
 		contentPane.add(lblNomeDoEstudante);
 		
 		JLabel lblNomeDaUniversidade = new JLabel("Nome da Universidade");
-		lblNomeDaUniversidade.setBounds(240, 105, 133, 14);
+		lblNomeDaUniversidade.setBounds(251, 117, 133, 14);
 		contentPane.add(lblNomeDaUniversidade);
 		
 		JLabel lblEstadoDaUniversidade = new JLabel("Estado da Universidade");
-		lblEstadoDaUniversidade.setBounds(240, 150, 133, 14);
+		lblEstadoDaUniversidade.setBounds(240, 159, 133, 14);
 		contentPane.add(lblEstadoDaUniversidade);
 		
 		JLabel lblNomeDoCurso = new JLabel("Nome do Curso");
-		lblNomeDoCurso.setBounds(251, 193, 133, 14);
+		lblNomeDoCurso.setBounds(251, 206, 133, 14);
 		contentPane.add(lblNomeDoCurso);
 		
 		textField = new JTextField();
@@ -68,17 +69,17 @@ public class AdicionaEstudante extends JFrame {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(215, 125, 183, 20);
+		textField_1.setBounds(215, 130, 183, 20);
 		contentPane.add(textField_1);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(215, 162, 183, 20);
+		textField_2.setBounds(215, 175, 183, 20);
 		contentPane.add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(215, 206, 183, 20);
+		textField_3.setBounds(215, 218, 183, 20);
 		contentPane.add(textField_3);
 		
 		JLabel lblNewLabel_1 = new JLabel("Modalidade");
@@ -135,11 +136,11 @@ public class AdicionaEstudante extends JFrame {
 		contentPane.add(pardo);
 		
 		JRadioButton preto = new JRadioButton("Preto");
-		preto.setBounds(109, 189, 109, 23);
+		preto.setBounds(109, 189, 89, 23);
 		contentPane.add(preto);
 		
 		JRadioButton indigena = new JRadioButton("Indígena");
-		indigena.setBounds(109, 217, 109, 23);
+		indigena.setBounds(109, 217, 89, 23);
 		contentPane.add(indigena);
 		
 		ButtonGroup etnia = new ButtonGroup();
@@ -149,15 +150,15 @@ public class AdicionaEstudante extends JFrame {
 		etnia.add(preto);
 		
 		JLabel lblNewLabel_3 = new JLabel("Ensino");
-		lblNewLabel_3.setBounds(263, 57, 46, 14);
+		lblNewLabel_3.setBounds(268, 75, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JRadioButton publico = new JRadioButton("Público");
-		publico.setBounds(214, 75, 89, 23);
+		publico.setBounds(215, 96, 89, 23);
 		contentPane.add(publico);
 		
 		JRadioButton privado = new JRadioButton("Privado");
-		privado.setBounds(310, 75, 109, 23);
+		privado.setBounds(310, 96, 109, 23);
 		contentPane.add(privado);
 		
 		ButtonGroup ensino = new ButtonGroup();
@@ -169,11 +170,11 @@ public class AdicionaEstudante extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JRadioButton sim = new JRadioButton("Sim");
-		sim.setBounds(215, 42, 76, 23);
+		sim.setBounds(217, 48, 76, 23);
 		contentPane.add(sim);
 		
 		JRadioButton nao = new JRadioButton("Não");
-		nao.setBounds(310, 42, 109, 23);
+		nao.setBounds(310, 48, 109, 23);
 		contentPane.add(nao);
 		
 		ButtonGroup deficiencia = new ButtonGroup();
@@ -188,6 +189,15 @@ public class AdicionaEstudante extends JFrame {
 		textField_4.setBounds(10, 147, 183, 20);
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
+		
+		JLabel lblNewLabel_6 = new JLabel("Nota do Enem");
+		lblNewLabel_6.setBounds(52, 75, 78, 14);
+		contentPane.add(lblNewLabel_6);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(10, 97, 183, 20);
+		contentPane.add(textField_5);
+		textField_5.setColumns(10);
 		
 		
 		JButton btnNewButton = new JButton("Adicionar");
@@ -225,10 +235,13 @@ public class AdicionaEstudante extends JFrame {
 							}else if(privado.isSelected()) {
 								Ensino = "Privado";
 							}
-							Estudante estudante;
+							Renda = Double.parseDouble(textField_4.getText());
+							Nota = Float.parseFloat(textField_5.getText());
+							Estudante estudante = new Estudante(textField.getText(), Nota, Renda, Etnia, Deficiencia, Ensino );
 							if(rdbtnNewRadioButton_5.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PcDRF")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PcDRF");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "PcDRF");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}
 								else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
@@ -237,7 +250,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else if(rdbtnNewRadioButton_4.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PcDEP")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PcDEP");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "PcDEP");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -245,7 +259,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else if(rdbtnPpiRendaFamiliar.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PPIRF")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PPIRF");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "PPIRF");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -253,7 +268,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else if(rdbtnNewRadioButton_3.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "EP")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "EP");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "EP");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -261,7 +277,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else if(rdbtnNewRadioButton_2.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "RF")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "RF");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "RF");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -269,7 +286,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else if(rdbtnNewRadioButton_1.isSelected()) {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "AC")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "AC");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "AC");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -277,7 +295,8 @@ public class AdicionaEstudante extends JFrame {
 							}
 							else {
 								if(!sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PRIEP")) {
-									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PRIEP");
+									sisu.procurar(nome, estado).procurar(curso).adicionar(estudante, "PRIEP");
+									JOptionPane.showMessageDialog(null, "Estudante adicionado com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante ja existe");
 
@@ -302,16 +321,6 @@ public class AdicionaEstudante extends JFrame {
 		});
 		btnNewButton_1.setBounds(471, 253, 89, 23);
 		contentPane.add(btnNewButton_1);
-		
-		JLabel lblNewLabel_6 = new JLabel("Nota do Enem");
-		lblNewLabel_6.setBounds(52, 75, 78, 14);
-		contentPane.add(lblNewLabel_6);
-		
-		textField_5 = new JTextField();
-		textField_5.setBounds(10, 97, 183, 20);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
-		
 		
 	}
 	}

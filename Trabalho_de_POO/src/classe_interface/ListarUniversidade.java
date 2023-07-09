@@ -1,7 +1,5 @@
 package classe_interface;
 
-import java.awt.EventQueue;
-import java.io.PrintStream;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,9 +7,6 @@ import javax.swing.border.EmptyBorder;
 
 import classe_instituicao.Instituicao;
 import classe_sisu.Sisu;
-
-import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;

@@ -1,6 +1,5 @@
 package classe_interface;
 
-import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -134,6 +133,7 @@ public class RemoveEstudante extends JFrame {
 							if(rdbtnNewRadioButton_5.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PcDRF")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PcDRF");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}
 								else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
@@ -143,6 +143,7 @@ public class RemoveEstudante extends JFrame {
 							else if(rdbtnNewRadioButton_4.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PcDEP")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PcDEP");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 
@@ -151,6 +152,7 @@ public class RemoveEstudante extends JFrame {
 							else if(rdbtnPpiRendaFamiliar.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PPIRF")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PPIRF");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 
@@ -159,6 +161,7 @@ public class RemoveEstudante extends JFrame {
 							else if(rdbtnNewRadioButton_3.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "EP")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "EP");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 
@@ -167,6 +170,7 @@ public class RemoveEstudante extends JFrame {
 							else if(rdbtnNewRadioButton_2.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "RF")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "RF");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 
@@ -175,6 +179,7 @@ public class RemoveEstudante extends JFrame {
 							else if(rdbtnNewRadioButton_1.isSelected()) {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "AC")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "AC");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 
@@ -183,6 +188,7 @@ public class RemoveEstudante extends JFrame {
 							else {
 								if(sisu.procurar(nome, estado).procurar(curso).existe(textField.getText(), "PRIEP")) {
 									sisu.procurar(nome, estado).procurar(curso).remover(textField.getText(), "PRIEP");
+									JOptionPane.showMessageDialog(null, "Estudante removido com sucesso");
 								}else {
 									JOptionPane.showMessageDialog(null, "Estudante nao existe");
 

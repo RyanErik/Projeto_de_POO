@@ -43,19 +43,6 @@ public class Instituicao {
 	    }
 	}
 	
-	public void adicionarAluno(String nome, Estudante aluno){
-		Curso curso = procurar(nome);
-		if(curso!= null){
-			curso.adicionar(aluno, aluno.getModalidade());
-		}
-	 }
-	 
-	public void removerAluno(String nome, String aluno, String modalidade){
-		Curso curso = procurar(nome);
-		if(curso!= null){
-			curso.remover(aluno, modalidade);
-		}
-	}
 	 
 	public void listarAlunos(String nome, String modalidade){
 		Curso curso = procurar(nome);

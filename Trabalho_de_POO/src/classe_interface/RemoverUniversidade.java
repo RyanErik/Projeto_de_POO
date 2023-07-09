@@ -1,27 +1,21 @@
 package classe_interface;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import classe_instituicao.Instituicao;
 import classe_sisu.Sisu;
 import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 
 public class RemoverUniversidade extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private Instituicao instituicao;
 	private JTextField textNome;
 	private JTextField textEstado;
 
