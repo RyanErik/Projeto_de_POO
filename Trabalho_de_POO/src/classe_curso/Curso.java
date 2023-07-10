@@ -24,12 +24,12 @@ public class Curso {
 
   public Curso(String nomeDoCurso, int vagasAC, int vagasEP, int vagasPPIEP, int vagasPPIRF, int vagasPcDEP, int vagasPcDRF, int vagasRF) {
     this.setVagasAC(vagasAC);
-    this.setVagasRF(vagasEP);
-    this.setVagasAC(vagasPPIEP);
-    this.setVagasRF(vagasPPIRF);
-    this.setVagasAC(vagasPcDEP);
-    this.setVagasRF(vagasPcDRF);
-    this.setVagasAC(vagasRF);
+    this.setVagasEP(vagasEP);
+    this.setVagasPPIEP(vagasPPIEP);
+    this.setVagasPPIRF(vagasPPIRF);
+    this.setVagasPcDEP(vagasPcDEP);
+    this.setVagasPcDRF(vagasPcDRF);
+    this.setVagasRF(vagasRF);
     listaAC = new AmplaConcorrencia(vagasAC);
     listaEP = new EscolaPublica(vagasEP);
     listaPPIEP = new PPIEP(vagasPPIEP);
